@@ -1,0 +1,439 @@
+<!-- 
+    Created with ❤ and 💪 by: I'm Rikka (YuukiC) 
+
+    You must connect your computer/device to the Internet to load online Font Awesome CSS/Javascript.
+    
+    NOTE: There are some unwanted indentations in this source code. This may be due to a bug or an error from the indentation options in VSCode. This indent "bug" applies to all HTML files connected to the tech.XYZ node.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="The official website of Tech.XYZ" />
+    <meta name="viewport" content="initial-scale=1 maximum-scale=3 user-scalable=yes">
+    <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=" />
+    <meta name="rating" content="all">
+    <meta name="robots" content="noindex,do-follow">
+    <link rel="icon" href="Icon/tech.xyz_whitetext-transparent.png">
+    <link rel="stylesheet" href="home_design.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
+    <!-- 
+        This Font Awesome JS is linked to my FA kit.
+    -->
+    <script src="https://kit.fontawesome.com/cd4e8e4035.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="home_Handler.js"></script>
+    <title> tech.xyz </title>
+    <style>
+        #errNoInternet-container {
+            font-family: sans-serif, serif;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: translateY(150px);
+            display: none;
+        }
+
+        .error-panel {
+            display: inline;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #refresh {
+            position: relative;
+            width: 90px;
+            height: 41px;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-radius: 20px;
+            border-color: #4a06c7;
+            border-style: solid;
+            background-color: #591ec9;
+            color: white;
+            outline: none;
+            transition: filter .2s;
+        }
+
+        #refresh:hover {
+            filter: drop-shadow(0px 0px 10px #8049ec)
+        }
+
+        /* Loading page */
+        #loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: inline-flex;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+
+        }
+
+        #loading > :nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        #loading > :nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        #loading > :nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        #loading > :nth-child(4) {
+            animation-delay: 3s;
+        }
+
+        #loading > :nth-child(5) {
+            animation-delay: 4s;
+        }
+
+        #loading > :nth-child(6) {
+            animation-delay: 5s;
+        }
+
+        #loading > :nth-child(7) {
+            animation-delay: 6s;
+        }
+
+        .spin {
+            background-color: rgba(73, 73, 73, 0.345);
+            color: transparent;
+            width: 40px;
+            height: 40px;
+            margin-left: 12px;
+            margin-right: 1px;
+            border-radius: 10px;
+            font-size: 26px;
+            text-align: center;
+            line-height: 40px;
+            animation: loading 1s infinite;
+        }
+
+        @keyframes loading {
+            50% {
+                background-color: rgba(143, 73, 255, 0.945);
+                color: white;
+                filter: drop-shadow(0px 0px 10px #304a77);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-container">
+        <div id="loading">
+            <p class="spin">L</p>
+            <p class="spin">O</p>
+            <p class="spin">A</p>
+            <p class="spin">D</p>
+            <p class="spin">I</p>
+            <p class="spin">N</p>
+            <p class="spin">G</p>
+        </div>
+    </div>
+    <div id="errNoInternet-container">
+        <div class="error-panel">
+            <img src="Icon/tech.xyz_whitetext-transparent.png" width="300">
+            <h3> No internet connection </h3>
+            <p> Please connect to the Internet to access <strong> tech.xyz</strong></p>
+            <br>
+            <button id="refresh"> Refresh </button>
+        </div>
+    </div>
+    <div id="body-content">
+        <header>
+            <img id="web-logo" src="Icon/tech.xyz_whitetext-transparent.png" style="width: 180px; margin-left: -24px; position: absolute; object-fit: cover;" loading="lazy">
+            <p style="display: inline; position: relative; left: 6.5em; top: 10px; transform: rotate(-25deg); color: white"> BETA </p>
+            <nav class="nav">
+                <input type="search" placeholder="Search" id="searchBox">
+                <div class="nav-link">
+                    <button class="navButton"> <a class="custom-a" href="#home"> HOME </a> </button>
+                    <button class="navButton"> <a class="custom-a" href="#members"> MEMBERS </a> </button>
+                    <button class="navButton"> <a class="custom-a" href="#project"> PROJECT </a> </button>
+                    <hr class="vertical-line">
+                </div>
+                <button class="navButton" style="width: 70px; background-color: #873cffa6;"> <a class="custom-a" href="https://rara.ai/premium?plan=all"><i class="fas fa-crown" style=" font-size: 15px"> </i> Pro </a> </button>
+                <!-- DropDown button -->
+                <div class="dropdown">
+                    <button class="dropdown-button"> <i class="fa fa-bars"> </i> </button>
+                    <div id="navigationMenu">
+                        <li style="margin-top: 4px;">
+                            <input type="search" placeholder="Search" id="searchBox-alt">
+                        </li>
+                        <div class="navigation-li">
+                            <li>
+                                <button class="menuButton"> <i class="fa solid fa-home"> </i> Home </button>
+                            </li>
+                            <li>
+                                <button class="menuButton"> <i class="fa solid fas fa-user-friends"> </i> Members
+                                </button>
+                            </li>
+                            <li>
+                                <button class="menuButton"> <i class="fas fas fa-terminal"> </i> Project </button>
+                            </li>
+                        </div>
+                        <li>
+                            <button class="menuButton"> <i class="fa solid fas fa-headset"> </i> Support </button>
+                        </li>
+                        <li>
+                            <button class="menuButton"> <i class="far fa-newspaper"> </i> News </button>
+                        </li>
+                        <li>
+                            <button id="darkmode-button">
+                                <h4 style="display:  inline; padding: 0px; padding-left: 0px;"> <i class="fas fa-moon"> </i> Dark Mode </h4>
+                                <label class="toggle">
+                                    <input type="checkbox" id="checkbox" onchange="change()" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </button>
+                        </li>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id="home">
+                <div class="intro">
+                    <div class="home-container">
+                        <div class="home-content">
+                            <div class="wrap">
+                                <h1 class="heading-typedelay"> Welcome to Tech.XYZ! </h1>
+                                <!-- This classic heading will appear if the screen width is less than 460px -->
+                                <h1 class="heading-classic"> Welcome to Tech.XYZ </h1>
+                            </div>
+                            <h4
+                                style="font-weight: 400; font-family: 'Open Sans', sans-serif; position: relative; top: -12px"> A developer group founded by YuukiC since 2009. </h4>
+                            <br>
+                            <blockquote>
+                                <em style="position: relative; top: -25px"> ~ "Yes, we can do better!" </em>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="animated-info">
+                    <p class="circle"> </p>
+                    <h5 style="font-family: 'Open Sans', sans-serif; text-align: left; margin-left: 5.5em; margin-top: -2.5em;">
+                        ABOUT US </h5>
+                    <div class="animated-info-content">
+                        <p style="font-size: 14px;"> tech.xyz is a developer group founded by YuukiC with his best friend, HAckerX, in 2009. </P>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <hr>
+            <section id="members" style="text-align: center;">
+                <h1> Members </h1>
+                <div class="creatorContainer">
+                    <div class="creator-panel">
+                        <div class="yuuki">
+                            <img class="ctrProfile" src="Images/yc-logo-whitetext.png" alt="yuukic profile photo">
+                            <p class="creator-name"> YuukiC </p>
+                            <p class="creator-panel-info"> A.K.A. : YC, I'm Rikka </p>
+                        </div>
+                    </div>
+                    <div class="creator-panel">
+                        <div class="caca">
+                            <img class="ctrProfile" src="Images/caca1.jpg" alt="caca profile photo">
+                            <p class="creator-name" style="width: 170px; font-size: 14px;"> Fransiska Paramitha (Caca)
+                            </p>
+                            <p class="creator-name" style="width: 170px; font-size: 14px;"> 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="creator-panel">
+                        <div class="tania">
+                            <img class="ctrProfile" src="Images/tania1.jpg" alt="nathania profile photo">
+                            <p class="creator-name" style="width: 170px; font-size: 14px;"> Nathania O.S. (Tania) </p>
+                        </div>
+                    </div>
+                    <div class="creator-panel">
+                        <div class="hackerx">
+                            <!--<img class="ctrProfile" src="" alt="hackerx profile photo"> -->
+                            <i class="far fa-question-circle" style="font-size: 28px; padding-bottom: 20px;"> </i>
+                            <p class="creator-name"> HAckerX </p>
+                        </div>
+                    </div>
+                    <div class="creator-panel">
+                        <div class="sueb">
+                            <img class="ctrProfile" src="Images/sueb.jpg" alt="sueb profile photo">
+                            <p class="creator-name"> The Sueps </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="project" style="text-align: center;">
+                <h1> Our Project </h1>
+                <div class="grid">
+                    <div id="sectionCards">
+                        <img src="Images/ai_widelogo.png">
+                        <h3> AI Rara </h3>
+                        <p class="description"> <b>AI Rara</b> is a powerful AI Chatbot that can make your work easier.
+                        </p>
+                        <div class="try-it">
+                            <button class="tryButton" onclick="try_onClick()"> <i class="fa solid fa-arrow-right"></i></button>
+                            <p> See more </p>
+                        </div>
+                    </div>
+                    <div id="sectionCards">
+                        <i class="fa solid fa-broadcast-tower" style="font-size: 30px;"> </i>
+                        <h3> web.ai (BETA) </h3>
+                        <p class="description"> <b> web.ai </b> is an AI that displays site information, along with hacking traces, security type, and the amount of data available on the server </p>
+                        <div class="try-it" onclick="seeMore_onClick()">
+                            <button class="tryButton"> <i class="fa fa-arrow-right"> </i> </button>
+                            <p> See more </p>
+                        </div>
+                    </div>
+                    <div id="sectionCards">
+                        <img src="Logo/logo_gbi-wide.jpg">
+                        <h3> GBI Siloam </h3>
+                        <p class="description"> Lihat di sini: <a href="https://gbisiloampare.org" target="_blank"> https://gbisiloampare.org </a> </p>
+                    </div>
+                    <div id="sectionCards">
+                        <i class="fab fa-android" style="font-size: 30px;"> </i>
+                        <h3> Android Tools </h3>
+                        <p class="description"> Explore our Android tools </p>
+                        <hr style="max-width: 250px; margin-top: 20px; margin-bottom: 20px; border-width: 0px;">
+                        <p class="description"> Includes: 
+                        <li class="custom-li">PerformIt!</li>
+                        <li class="custom-li">AirOS Launcher</li>
+                        <li class="custom-li">CSharpIDE</li>
+                        </p>
+                        <div class="try-it" onclick="seeMore_onClick()">
+                            <button class="tryButton"> <i class="fa fa-arrow-right"> </i> </button>
+                            <p> See more </p>
+                        </div>
+                    </div>
+                    <div id="sectionCards">
+                        <i class="material-symbols-outlined" style="font-size: 30px;">share_reviews</i>
+                        <h3> WebReview </h3>
+                        <p class="description"> Together with <a class="custom-a" href="https://pcmag.com">PCMag</a>, WebReview is a tool that stores reviews of 24.000.000+ websites. </p>
+                        <div class="try-it" onclick="seeMore_onClick()">
+                            <button class="tryButton"> <i class="fa fa-arrow-right"> </i> </button>
+                            <p> See more </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animated-info">
+                    <p class="circle"> </p>
+                    <h5
+                        style="font-family: 'Open Sans', sans-serif; text-align: left; margin-left: 5.5em; margin-top: -2.5em;">
+                        OTHER GROUP PROJECTS </h5>
+                        
+                    <div class="animated-info-content">
+                        <p class="group">~ <b> <a class="custom-a" href="/news/the-AI-group.html"> The Mulmed Project </a> </b> (September 2008-2016) </p>
+                        <p class="group"> ~ <b> <a class="custom-a" href="/news/group/winbreak.html"> WinBreak </a> </b> (May 2010- Jan 2021) </p>
+                        <p class="group"> ~ <b> <a class="custom-a" href="/news/group/wcct.html"> Women Can Code, too! (WCCT) </a> </b> (April 2012-now) </p>
+
+                        <h6 style="font-family: 'Open Sans', sans-serif; text-align: left; "> YUUKIC </h6>
+
+                        <p class="group"> ~ <b> <a class="custom-a" href="/news/group/yuuki-and-asuna.html"> Yuuki vs. Asuna </a> </b> (late 2007-2010) </p>
+                        <p class="group"> ~ <b> <a class="custom-a" href="/news/group/yuuki-and-tania.html"> Yuuki vs. Tania </a> </b> (October 2008-now) </p>
+                        <h6 style="font-family: 'Open Sans', sans-serif; text-align: left; margin-top: -5px; padding-right: 30px; font-weight: 200;">
+                            A.K.A. :
+                            <span style="font-family: 'Space Mono', sans-serif; font-style: italic; font-weight: 800;"> Y.T., T.Y. </span>
+                        </h6>
+                        <p class="group"> ~ <b> <a class="custom-a" href="/news/group/yuuki-and-alina.html"> Yuuki & Alina </a> </b> (2008-early 2013) </p>
+                        <h6 style="font-family: 'Open Sans', sans-serif; text-align: left; margin-top: -5px; padding-right: 30px; font-weight: 200;">
+                            A.K.A. :
+                            <span style="font-family: 'Space Mono', sans-serif; font-style: italic; font-weight: 800;"> Yuuki vs. Alina, Yuuki & Alina vs. The Mulmed Project, Alina & Yuuki, A.Y., Y.A. </span>
+                        </h6>
+                        <p class="group"> ~ <b> <a class="custom-a" href="/news/group/hack_this.html"> YuukiC vs HAckerX (hacker community) </a> </b> (March 2008-now) </p>
+                        <p class="group"> ~ <b> <a class="custom-a" href="/news/group/dark-web-explorer.html"> DarkWebExplorer </a> </b> (Feb 2014-now) </p>
+                        <p class="group"> ~ <b> <a class="custom-a" href="/news/group.yuukicaca.html"> Yuuki & Caca </a> </b> (Feb 2017-now) </p>
+                        <h6 style="font-family: 'Open Sans', sans-serif; text-align: left; margin-top: -5px; padding-right: 30px; font-weight: 200;">
+                            A.K.A. :
+                            <span style="font-family: 'Space Mono', sans-serif; font-style: italic; font-weight: 800;"> Yuuki vs. Caca, Y.C., F.P.H. vs Y.C. </span>
+                        </h6>
+                        <h6 style="font-family: 'Open Sans', sans-serif; text-align: left; "> CACA </h6>
+                        <p class="group"> ~ <b> <a class="custom-a" href="https://fph10.com/group/singasong"> SingASong </a> </b> (mid 2006-2008)
+                        </p>
+                        <h6 style="font-family: 'Open Sans', sans-serif; text-align: left; margin-top: -5px; margin-bottom: 6px;padding-right: 30px; font-weight: 200;">
+                            A.K.A. :
+                            <span style="font-family: 'Space Mono', sans-serif; font-style: italic; font-weight: 800;"> Grup Gabut 2006 </span>
+                        </h6>
+                        <h6 style="font-family: 'Open Sans', sans-serif; text-align: left; margin-top: -5px; padding-right: 30px; font-weight: 200;">
+                            Members :
+                            <span style="font-family: 'Space Mono', sans-serif; font-style: italic; font-weight: 700;"> Vinda Y.S., Fransiska Paramitha, Jessica Noleen A. </span>
+                        </h6>
+                        <p class="group"> ~ <b> <a class="custom-a" href="https://ui.go.com"> UI.go </a> </b> (*June 2017-now) </p>
+                        <h6 style="font-family: 'Open Sans', sans-serif; text-align: left; "> TANIA </h6>
+                        <p class="group"> none </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- The footer -->
+        <footer>
+            <div id="footer-head">
+                <h1> tech.xyz <span style="font-size: 12px; font-family: 'Open Sans';"> version 2024.05.6 </span> </h1>
+                <button id="back-to-top"> <i class="fas fa-arrow-up"> </i> </button>
+            </div>
+            <hr style="position: relative; max-width: 2160px; box-shadow: none; padding: 0px;">
+            <h4 style="text-align: center;"> Subscribe to our newsletter! </h4>
+            <form autocomplete="on" target="_self">
+                <div class="news-subscription">
+                    <input type="email" maxlength="70" alt="emailtype" title="Email" placeholder="Enter here" id="type-email" required>
+                    <button id="request-newsLetter"> <i class="fa solid fas fa-paper-plane" style="font-size: 14px;"> </i> Send </button>
+                </div>
+            </form>
+            <div class="footerContainer">
+                <div class="item1">
+                    <h2> Project </h2>
+                    <button class="footer-navButton"> <a href="https://yuukiconan.wordpress.com/ai_rara"> AI Rara </a>
+                    </button>
+                    <br>
+                    <button class="footer-navButton"> <a href="https://yuukiconan.wordpress.com/rikka_ai"> rikka.ai </a>
+                    </button>
+                    <br>
+                    <button class="footer-navButton"> <a href="https://yuukiconan.wordpress.com/"> 3 or 9 Girls </a>
+                    </button>
+                    <br>
+                    <button class="footer-navButton"> <a href="https://yuukiconan.wordpress.com/quotes_ai"> Quotes.Ai by Tech-Z </a>
+                    </button>
+                </div>
+                <div class="item2">
+                    <h2> Contact Us </h2>
+                    <button class="footer-navButton"> <a href="mailto:yuukiconanofficial@gmail.com" style="text-decoration: none; color: white;"> <i class="fa solid fa-envelope"> </i> Email </a>
+                    </button>
+                    <br>
+                    <button class="footer-navButton"> <a href="https://wa.me/6285850428616" style="text-decoration: none; color: white;"> <i class="fa solid fa-whatsapp"> </i> Chat </a>
+                    </button>
+                    <br>
+                    <button class="footer-navButton"> <a href="https://yuukiconan.wordpress.com/contact" style="text-decoration: none; color: white;"> <i class="fa solid fa-comment"> </i> Feedback </a>
+                    </button>
+                </div>
+                <div class="item3">
+                    <h2> Social Media </h2>
+                    <button class="footer-navButton"> <a href="https://instagram.com/itz_yuukic" style="text-decoration: none; color: white;" target="_blank"> <i class="fa solid fa-instagram"> </i> YuukiC </a> </button>
+                    <br>
+                    <button class="footer-navButton"> <a href="https://instagram.com/its.fransiska_10" style="text-decoration: none; color: white;" target="_blank"> <i class="fa solid fa-instagram"> </i> Caca </a> </button>
+                    <br>
+                    <button class="footer-navButton"> <a href="https://instagram.com/nathaniaoctaa" style="text-decoration: none; color: white;" target="_blank"> <i class="fa solid fa-instagram"> </i> Tania </a> </button>
+                    <br>
+                    <button class="footer-navButton"> <a href="https://github.com/YuukiConan" style="text-decoration: none; color: white;" target="_blank"> <i class="fa solid fa-github"> </i> YuukiConan </a> </button>
+                </div>
+            </div>
+            <br>
+            <div class="other-items">
+                <a href="/history.html"> History </a>
+                <a href="disclaimer.html"> Disclaimer </a>
+                <a href="changelog.html"> Changelog </a>
+            </div>
+            <h6 style="text-align: center; font-family: 'Open Sans', sans-serif; font-weight: 300;"> Copyright© <span id="year"> </span> YuukiC from Tech.XYZ </h6>
+            <h6 style="text-align: center; font-family: 'Open Sans', sans-serif; font-weight: 300;"> Made with ❤ and 💪 by <a href="https://tech-z.com/" style="text-decoration: none; color: white; cursor: default;"> Tech.XYZ </a>
+            </h6>
+        </footer>
+    </div>
+</body>
+</html>
